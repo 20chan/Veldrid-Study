@@ -101,6 +101,17 @@ namespace Veldrid_Study
             _commandList = factory.CreateCommandList();
         }
 
+        static void DisableResources()
+        {
+            _commandList.Dispose();
+            _vertexBuffer.Dispose();
+            _indexBuffer.Dispose();
+            _vertexShader.Dispose();
+            _fragmentShader.Dispose();
+            _pipeline.Dispose();
+            _graphicsDevice.Dispose();
+        }
+
         static Shader LoadShader(ShaderStages stage)
         {
             string extension = null;
